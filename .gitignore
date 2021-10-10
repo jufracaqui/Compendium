@@ -1,4 +1,7 @@
 scripts
-web-app/node_modules
+web/front/node_modules
+web/dist
 .angulardoc.json
-compendium.config.json
+.DS_Store
+configs
+build/*

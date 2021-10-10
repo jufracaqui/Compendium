@@ -8,7 +8,6 @@ Scripts should be added in the directory `scripts` inside directories that follo
 
 ```
 compendium
-compendium.config.json
 scripts
     |_ scriptName1
     |   |_ config.json

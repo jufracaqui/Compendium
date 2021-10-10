@@ -30,8 +30,8 @@ export class ConfigEditorComponent implements OnInit {
     return this.getConfig().OSs;
   }
 
-  onSubmit() {
-
+  saveConfig() {
+    this.actions.updateConfig(this.configBackup);
   }
 
   addOS(newOs: String) {

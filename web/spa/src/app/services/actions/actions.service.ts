@@ -10,7 +10,7 @@ export class ActionsService {
 
   updateConfig(config: Object) {
     // @ts-expect-error
-    return window.updateConfig(JSON.stringify({a: 1, b: 2}));
+    return window.updateConfig(config);
   }
 
   runScript(script: Script) {
