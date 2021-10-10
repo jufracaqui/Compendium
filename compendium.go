@@ -119,6 +119,9 @@ func listScripts() []Script {
 
 	scripts := make([]Script, 0)
 	for _, f := range files {
+		if strings.HasPrefix(f.Name(), ".") {
+			continue
+		}
 		s := calculateScript(scriptsPath + "/" + f.Name())
 		scripts = append(scripts, s)
 	}
