@@ -1,0 +1,31 @@
+<nav class="panel">
+  <div class="panel-block">
+    <p class="control has-icons-left">
+      <input class="input" type="text" placeholder="Search" (input)="search($event)">
+      <span class="icon is-left">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </span>
+    </p>
+  </div>
+  <p class="panel-tabs">
+    <a
+      *ngFor="let panelName of getPanels(); let i = index;"
+      [class.is-active]="isPanelActive(i)"
+      (click)="setActivePanel(i)"
+    >
+      {{ panelName }}
+    </a>
+  </p>
+  <div class="panel-block" >
+    <app-config-editor *ngIf="activePanel === getPanels().length - 1; else tab"></app-config-editor>
+    <ng-template #tab>
+      <div class="tile is-ancestor">
+        <app-script
+          *ngFor="let script of scripts"
+          [script]="script"
+          (run)="runScript($event)"
+        ></app-script>
+      </div>
+    </ng-template>
+  </div>
+</nav>

@@ -1,0 +1,46 @@
+<div class="columns is-mobile">
+  <div class="column is-half">
+    <label class="label">Add OS</label>
+    <app-multiple-tag-input
+      placeholder="Añadir OS"
+      [items]="configBackup.OSs"
+      (add)="addOS($event)"
+      (remove)="deleteOs($event)"
+    ></app-multiple-tag-input>
+  </div>
+  <div class="column is-half">
+    <label class="label">Add Terminal</label>
+    <app-multiple-tag-input
+      placeholder="Añadir terminal"
+      [items]="configBackup.terminals"
+      (add)="addTerminal($event)"
+      (remove)="deleteTerminal($event)"
+    ></app-multiple-tag-input>
+  </div>
+</div>
+<div class="columns is-mobile">
+  <div class="column is-half">
+    <label class="label">Prefered OS</label>
+    <div class="select">
+      <div class="control">
+        <div class="select">
+          <select [value]="configBackup.preferedOs">
+            <option *ngFor="let os of configBackup.OSs" [selected]="os === configBackup.preferedOs">{{ os }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-half">
+    <label class="label">Prefered terminal</label>
+    <div class="select">
+      <div class="control">
+        <div class="select">
+          <select [value]="configBackup.preferedTerminal">
+            <option *ngFor="let terminal of configBackup.terminals" [selected]="terminal === configBackup.preferedTerminal">{{ terminal }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

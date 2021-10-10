@@ -1,0 +1,22 @@
+<div>
+  <div class="field has-addons">
+    <div class="control is-expanded">
+      <input class="input" type="text" [placeholder]="placeholder" #newItem>
+    </div>
+    <div class="control">
+      <a (click)="addItem(newItem.value)" class="button is-link">
+        <span class="icon">
+          <i class="fas fa-plus" aria-hidden="true"></i>
+        </span>
+      </a>
+    </div>
+  </div>
+  <div class="field is-grouped is-grouped-multiline">
+    <div *ngFor="let item of items; let i = index" class="control">
+      <div class="tags has-addons">
+        <a class="tag is-link">{{ item }}</a>
+        <a class="tag is-delete" (click)="deleteItem(i)"></a>
+      </div>
+    </div>
+  </div>
+</div>

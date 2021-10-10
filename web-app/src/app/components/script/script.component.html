@@ -1,0 +1,21 @@
+<article *ngIf="script" class="tile notification is-primary">
+  <header>
+    <div class="info">
+      <p class="title">
+        {{ script.config.name }}
+      </p>
+      <p class="subtitle"> {{ script.config.tab }} -  {{ script.config.author }}</p>
+    </div>
+    <button (click)="showDescription = !showDescription" class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </header>
+  <p *ngIf="showDescription" class="description">
+    {{ script.config.description }}
+  </p>
+  <footer class="buttons">
+    <button (click)="runScript()" class="button is-warning is-fullwidth">Run</button>
+  </footer>
+</article>

@@ -1,0 +1,17 @@
+article {
+  margin-bottom: 8px;
+
+  header {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 8px;
+
+    .info {
+      flex-grow: 1;
+    }
+  }
+
+  .description {
+    margin-bottom: 8px;
+  }
+}

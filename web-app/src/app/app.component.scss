@@ -1,0 +1,11 @@
+nav.panel {
+  height: 100vh;
+
+  .panel-block > * {
+    width: 100%;
+  }
+}
+
+.tile.is-ancestor {
+  padding: 8px;
+}
