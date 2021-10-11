@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
     }
 
     if (this.filterText) {
-      this.scripts = this.scripts.filter(script => script.config.name.search(this.filterText) !== -1);
+      this.scripts = this.scripts.filter(script => script.config.name.toLowerCase().search(this.filterText.toLowerCase()) !== -1);
     }
   }
 

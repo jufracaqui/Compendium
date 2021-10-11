@@ -122,6 +122,9 @@ func listScripts() []Script {
 		if strings.HasPrefix(f.Name(), ".") {
 			continue
 		}
+		if !f.IsDir() {
+			continue
+		}
 		s := calculateScript(scriptsPath + "/" + f.Name())
 		scripts = append(scripts, s)
 	}
