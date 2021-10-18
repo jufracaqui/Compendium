@@ -2,7 +2,7 @@
   <div class="column is-half">
     <label class="label">Add OS</label>
     <app-multiple-tag-input
-      placeholder="Añadir OS"
+      placeholder="Add OS"
       [items]="configBackup.OSs"
       (add)="addOS($event)"
       (remove)="deleteOs($event)"
@@ -11,7 +11,7 @@
   <div class="column is-half">
     <label class="label">Add Terminal</label>
     <app-multiple-tag-input
-      placeholder="Añadir terminal"
+      placeholder="Add terminal"
       [items]="configBackup.terminals"
       (add)="addTerminal($event)"
       (remove)="deleteTerminal($event)"
@@ -42,6 +42,26 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+<div class="columns is-mobile">
+  <div class="column is-half">
+    <label class="label">Add parameter before script</label>
+    <app-multiple-tag-input
+      placeholder="Add parameter before script"
+      [items]="configBackup.beforeScriptParameters"
+      (add)="addBeforeParam($event)"
+      (remove)="deleteBeforeParam($event)"
+    ></app-multiple-tag-input>
+  </div>
+  <div class="column is-half">
+    <label class="label">Add parameter after script</label>
+    <app-multiple-tag-input
+      placeholder="Add parameter after script"
+      [items]="configBackup.afterScriptParameters"
+      (add)="addAfterParam($event)"
+      (remove)="deleteAfterParam($event)"
+    ></app-multiple-tag-input>
   </div>
 </div>
 <div class="columns is-full">
