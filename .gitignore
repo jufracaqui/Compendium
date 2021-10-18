@@ -1,4 +1,5 @@
 scripts
+!web/spa/src/app/interfaces/scripts
 web/front/node_modules
 web/dist
 .angulardoc.json
