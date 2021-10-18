@@ -12,6 +12,7 @@ export class ConfigService {
   constructor() {
     // @ts-expect-error
     this.initialState = window.initialState;
+    this.fixInitialState();
     /*this.initialState = {
       scripts: [
         {
@@ -46,6 +47,11 @@ export class ConfigService {
         preferedTerminal: "zsh",
       },
     }; */
+  }
+
+  fixInitialState() {
+    this.initialState.config.beforeScriptParameters = this.initialState.config.beforeScriptParameters || [];
+    this.initialState.config.afterScriptParameters = this.initialState.config.afterScriptParameters || [];
   }
 
   getInitialState(): InitialState {

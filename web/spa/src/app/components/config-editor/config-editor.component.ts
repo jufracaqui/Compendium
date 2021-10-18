@@ -49,4 +49,20 @@ export class ConfigEditorComponent implements OnInit {
   deleteTerminal(index: Number) {
     this.configBackup.terminals = this.configBackup.terminals.filter((_, i) => i !== index);
   }
+
+  addBeforeParam(newParam: String) {
+    this.configBackup.beforeScriptParameters.push(newParam);
+  }
+
+  deleteBeforeParam(index: Number) {
+    this.configBackup.beforeScriptParameters = this.configBackup.beforeScriptParameters.filter((_, i) => i !== index);
+  }
+
+  addAfterParam(newParam: String) {
+    this.configBackup.afterScriptParameters.push(newParam);
+  }
+
+  deleteAfterParam(index: Number) {
+    this.configBackup.afterScriptParameters = this.configBackup.afterScriptParameters.filter((_, i) => i !== index);
+  }
 }

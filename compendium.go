@@ -32,10 +32,12 @@ type InitialState struct {
 
 // UserConfig stores data the user can modify
 type UserConfig struct {
-	OSs              []string `json:"OSs"`
-	PreferedOS       string   `json:"preferedOs"`
-	Terminals        []string `json:"terminals"`
-	Preferedterminal string   `json:"preferedTerminal"`
+	OSs                    []string `json:"OSs"`
+	PreferedOS             string   `json:"preferedOs"`
+	Terminals              []string `json:"terminals"`
+	Preferedterminal       string   `json:"preferedTerminal"`
+	BeforeScriptParameters []string `json:"beforeScriptParameters"`
+	AfterScriptParameters  []string `json:"afterScriptParameters"`
 }
 
 // Script represents a script the user can run
@@ -57,10 +59,12 @@ func main() {
 	// If no config create a default one
 	if config.PreferedOS == "" {
 		config = UserConfig{
-			OSs:              []string{"mac", "fedora"},
-			PreferedOS:       "mac",
-			Terminals:        []string{"bash", "zsh"},
-			Preferedterminal: "bash",
+			OSs:                    []string{"mac", "fedora", "windows"},
+			PreferedOS:             "mac",
+			Terminals:              []string{"bash", "zsh", "powershell"},
+			Preferedterminal:       "bash",
+			BeforeScriptParameters: []string{},
+			AfterScriptParameters:  []string{},
 		}
 	}
 
@@ -250,7 +254,12 @@ func runScript(script Script) {
 
 // executeFile runs an executable file in a terminal
 func executeFile(filePath string) {
-	cmd := exec.Command(userConfig.Preferedterminal, filePath)
+	params := []string{}
+	params = append(params, userConfig.BeforeScriptParameters...)
+	params = append(params, filePath)
+	params = append(params, userConfig.AfterScriptParameters...)
+
+	cmd := exec.Command(userConfig.Preferedterminal, params...)
 	cmd.Stdout = os.Stdout
 	cmd.Stdin = os.Stdin
 	cmd.Stderr = os.Stderr
