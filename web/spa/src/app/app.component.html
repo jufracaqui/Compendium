@@ -1,5 +1,5 @@
 <nav class="panel">
-  <div class="panel-block">
+  <div class="panel-block searcher">
     <p class="control has-icons-left">
       <input class="input" type="text" placeholder="Search" (input)="search($event)">
       <span class="icon is-left">
@@ -7,16 +7,27 @@
       </span>
     </p>
   </div>
-  <p class="panel-tabs">
-    <a
-      *ngFor="let panelName of getPanels(); let i = index;"
-      [class.is-active]="isPanelActive(i)"
-      (click)="setActivePanel(i)"
-    >
-      {{ panelName }}
-    </a>
-  </p>
-  <div class="panel-block" >
+  <div class="panel-tabs dropdown is-hoverable">
+    <div class="dropdown-trigger">
+      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+        <span>{{ getPanels()[activePanel] }}</span>
+        <span class="icon is-small">
+          <i class="fas fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </button>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+      <div class="dropdown-content">
+        <a class="dropdown-item"
+          *ngFor="let panelName of getPanels(); let i = index;"
+          (click)="setActivePanel(i)"
+        >
+          {{ panelName }}
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="panel-block scripts">
     <app-config-editor *ngIf="activePanel === getPanels().length - 1; else tab"></app-config-editor>
     <ng-template #tab>
       <div class="tile is-ancestor">

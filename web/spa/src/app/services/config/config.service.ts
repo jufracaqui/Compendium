@@ -13,14 +13,14 @@ export class ConfigService {
     // @ts-expect-error
     this.initialState = window.initialState;
     this.fixInitialState();
-    /*this.initialState = {
+    this.initialState = {
       scripts: [
         {
           config: {
             author: "Fran",
             description: "1 desc jdkfla dfj klds fjdkasñla sdfkj",
             name: "1",
-            tab: "fjdkaslñ"
+            tab: "1"
           },
           dir: "asdf"
         },
@@ -29,10 +29,118 @@ export class ConfigService {
             author: "Fran",
             description: "2 desc jdkfla dfj klds fjdkasñla sdfkj",
             name: "2",
-            tab: "fdsa"
+            tab: "1"
           },
           dir: "fdas"
-        }
+        },
+        {
+          config: {
+            author: "Fran",
+            description: "1 desc jdkfla dfj klds fjdkasñla sdfkj",
+            name: "1",
+            tab: "2"
+          },
+          dir: "asdf"
+        },
+        {
+          config: {
+            author: "Fran",
+            description: "2 desc jdkfla dfj klds fjdkasñla sdfkj",
+            name: "2",
+            tab: "2"
+          },
+          dir: "fdas"
+        },
+        {
+          config: {
+            author: "Fran",
+            description: "1 desc jdkfla dfj klds fjdkasñla sdfkj",
+            name: "1",
+            tab: "3"
+          },
+          dir: "asdf"
+        },
+        {
+          config: {
+            author: "Fran",
+            description: "2 desc jdkfla dfj klds fjdkasñla sdfkj",
+            name: "2",
+            tab: "3"
+          },
+          dir: "fdas"
+        },
+        {
+          config: {
+            author: "Fran",
+            description: "1 desc jdkfla dfj klds fjdkasñla sdfkj",
+            name: "1",
+            tab: "4"
+          },
+          dir: "asdf"
+        },
+        {
+          config: {
+            author: "Fran",
+            description: "2 desc jdkfla dfj klds fjdkasñla sdfkj",
+            name: "2",
+            tab: "4"
+          },
+          dir: "fdas"
+        },
+        {
+          config: {
+            author: "Fran",
+            description: "1 desc jdkfla dfj klds fjdkasñla sdfkj",
+            name: "1",
+            tab: "aassddff"
+          },
+          dir: "asdf"
+        },
+        {
+          config: {
+            author: "Fran",
+            description: "2 desc jdkfla dfj klds fjdkasñla sdfkj",
+            name: "2",
+            tab: "qqwweerr"
+          },
+          dir: "fdas"
+        },
+        {
+          config: {
+            author: "Fran",
+            description: "1 desc jdkfla dfj klds fjdkasñla sdfkj",
+            name: "1",
+            tab: "zzxxccvv"
+          },
+          dir: "asdf"
+        },
+        {
+          config: {
+            author: "Fran",
+            description: "2 desc jdkfla dfj klds fjdkasñla sdfkj",
+            name: "2",
+            tab: "5"
+          },
+          dir: "fdas"
+        },
+        {
+          config: {
+            author: "Fran",
+            description: "1 desc jdkfla dfj klds fjdkasñla sdfkj",
+            name: "1",
+            tab: "6"
+          },
+          dir: "asdf"
+        },
+        {
+          config: {
+            author: "Fran",
+            description: "2 desc jdkfla dfj klds fjdkasñla sdfkj",
+            name: "2",
+            tab: "7777777777777"
+          },
+          dir: "fdas"
+        },
       ],
       config: {
         OSs: [
@@ -45,13 +153,15 @@ export class ConfigService {
           "zsh",
         ],
         preferedTerminal: "zsh",
+        afterScriptParameters: [],
+        beforeScriptParameters: [],
       },
-    }; */
+    };
   }
 
   fixInitialState() {
-    this.initialState.config.beforeScriptParameters = this.initialState.config.beforeScriptParameters || [];
-    this.initialState.config.afterScriptParameters = this.initialState.config.afterScriptParameters || [];
+    //this.initialState.config.beforeScriptParameters = this.initialState.config.beforeScriptParameters || [];
+    //this.initialState.config.afterScriptParameters = this.initialState.config.afterScriptParameters || [];
   }
 
   getInitialState(): InitialState {

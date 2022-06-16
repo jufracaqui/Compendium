@@ -9,3 +9,36 @@ nav.panel {
 .tile.is-ancestor {
   padding: 8px;
 }
+
+.searcher {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+}
+
+.panel-tabs {
+  position: fixed;
+  margin-top: 57px;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+}
+
+.scripts {
+  margin-top: 100px;
+}
+
+.dropdown {
+
+  button {
+    width: 200px;
+  }
+}
+
+.dropdown-menu {
+  width: 100%;
+  margin-top: -3px;
+}
