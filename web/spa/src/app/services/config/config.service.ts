@@ -13,7 +13,7 @@ export class ConfigService {
     // @ts-expect-error
     this.initialState = window.initialState;
     this.fixInitialState();
-    this.initialState = {
+    /*this.initialState = {
       scripts: [
         {
           config: {
@@ -156,7 +156,7 @@ export class ConfigService {
         afterScriptParameters: [],
         beforeScriptParameters: [],
       },
-    };
+    };*/
   }
 
   fixInitialState() {

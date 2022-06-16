@@ -6,3 +6,7 @@ web/dist
 .DS_Store
 configs
 build/*
+linux
+mac
+m1
+compendium
